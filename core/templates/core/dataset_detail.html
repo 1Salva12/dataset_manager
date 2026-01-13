@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ dataset.name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+    <h3>📄 Dataset: {{ dataset.name }}</h3>
+
+    <p>
+        <a href="{{ dataset.file.url }}" class="btn btn-primary">
+            Descargar dataset
+        </a>
+    </p>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">
+        ← Volver
+    </a>
+</div>
+
+</body>
+</html>
+
