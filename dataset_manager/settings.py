@@ -26,10 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-ej8(b1iah9bz89wv%eh&w!@n_u&kef9dq%%7&2fr3s+y9-_81m"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -74,6 +72,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "dataset_manager.wsgi.application"
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
+
 
 
 # Database
@@ -127,9 +127,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'core/static')]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'otra_carpeta_static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
